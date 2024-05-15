@@ -1,19 +1,16 @@
-import Menu from "./components/menu/Menu";
-import MenuToggle from "./components/menu/MenuToggle";
-import MenuDropdown from "./components/menu/MenuDropdown";
-import MenuItem from "./components/menu/MenuItem";
+import Menu from "./components/menu/MenuIndex";
 
 export default function App() {
   const sports = ["Tennis", "Pickleball", "Racquetball", "Football"];
 
   return (
     <Menu>
-      <MenuToggle>sports</MenuToggle>
-      <MenuDropdown>
+      <Menu.Toggle>sports</Menu.Toggle>
+      <Menu.Dropdown>
         {sports.map((sport) => (
-          <MenuItem key={sport}>{sport}</MenuItem>
+          <Menu.Item key={sport}>{sport}</Menu.Item>
         ))}
-      </MenuDropdown>
+      </Menu.Dropdown>
     </Menu>
   );
 }
