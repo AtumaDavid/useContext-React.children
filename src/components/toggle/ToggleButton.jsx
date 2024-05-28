@@ -1,9 +1,8 @@
-/* eslint-disable react/prop-types */
+import React from "react";
+import { ToggleContext } from "./Toggle";
 
-export default function ToggleButton({ children, onClick }) {
-  return (
-    <button className="button-lg" onClick={onClick}>
-      {children}
-    </button>
-  );
+// eslint-disable-next-line react/prop-types
+export default function ToggleButton({ children }) {
+  const { toggle } = React.useContext(ToggleContext);
+  return <div onClick={toggle}>{children}</div>;
 }
